@@ -12,7 +12,7 @@ class Obj:
         self.x_speed = x_speed
         self.y_speed = y_speed
         self.table = table
-        self.rectangle = self.table.draw_rectangle(self)
+        self.square = self.table.draw_square(self)
 
     def move_up(self, master):
         self.y_posn = self.y_posn - self.y_speed
@@ -22,7 +22,7 @@ class Obj:
         x2 = self.x_posn+self.width
         y1 = self.y_posn
         y2 = self.y_posn+self.height
-        self.table.move_item(self.rectangle, x1, y1, x2, y2)
+        self.table.move_item(self.square, x1, y1, x2, y2)
 
     def move_down(self, master):
         self.y_posn = self.y_posn + self.y_speed
@@ -33,7 +33,7 @@ class Obj:
         x2 = self.x_posn+self.width
         y1 = self.y_posn
         y2 = self.y_posn+self.height
-        self.table.move_item(self.rectangle, x1, y1, x2, y2)
+        self.table.move_item(self.square, x1, y1, x2, y2)
 
     def move_right(self, master):
         self.x_posn = self.x_posn + self.x_speed
@@ -43,7 +43,7 @@ class Obj:
         x2 = self.x_posn+self.width
         y1 = self.y_posn
         y2 = self.y_posn+self.height
-        self.table.move_rectangle(self.rectangle, x1, y1, x2, y2)
+        self.table.move_square(self.square, x1, y1, x2, y2)
 
     def move_right(self, master):
         self.x_posn = self.x_posn + self.x_speed
@@ -53,7 +53,7 @@ class Obj:
         x2 = self.x_posn+self.width
         y1 = self.y_posn
         y2 = self.y_posn+self.height
-        self.table.move_rectangle(self.rectangle, x1, y1, x2, y2)
+        self.table.move_square(self.square, x1, y1, x2, y2)
 
     def start_position(self):
         self.x_posn = self.x_start
