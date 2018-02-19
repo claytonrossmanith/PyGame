@@ -35,10 +35,10 @@ class Obj:
         y2 = self.y_posn+self.height
         self.table.move_item(self.rectangle, x1, y1, x2, y2)
 
-   def move_left(self, master):
-        self.x_posn = self.x_posn - self.x_speed
-        if(self.x_posn <= 0):
-            self.x_posn = 0
+    def move_right(self, master):
+        self.x_posn = self.x_posn + self.x_speed
+        if(self.x_posn >= far_right):
+            self.x_posn = far_right
         x1 = self.x_posn
         x2 = self.x_posn+self.width
         y1 = self.y_posn
@@ -67,7 +67,7 @@ class Obj:
         bottom = self.y_posn + self.height
         left = self.x_posn
         right = self.x_posn + self.width
-        v_center top + (self.height/2)
+        v_center = top + (self.height/2)
         h_center = left + (self.width/2)
 
         if(x_posn <= 3):
