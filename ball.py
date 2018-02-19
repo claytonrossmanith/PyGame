@@ -2,13 +2,13 @@ import table
 
 class Ball:
     #### constructor
-    def __init__(self, table, width=17, height=17, colour="yellow",
+    def __init__(self, table, width=17, height=17, color="yellow",
                  x_posn=0, y_posn=200, x_speed=23, y_speed=23):
         self.width = width
         self.height = height
         self.x_posn = x_posn
         self.y_posn = y_posn
-        self.colour = colour
+        self.color = color
         self.x_start = x_posn
         self.y_start = y_posn
         self.x_speed = x_speed
@@ -64,21 +64,21 @@ class Ball:
         self.y_posn = self.y_start
 
     # ball variables:
-    top = self.y_posn
-    bottom = self.y_posn + self.height
-    left = self.x_posn
-    right = self.x_posn + self.width
-    v_centre = top + (self.height/2)
-    h_centre = left + (self.width/2)
+        top = self.y_posn
+        bottom = self.y_posn + self.height
+        left = self.x_posn
+        right = self.x_posn + self.width
+        v_centre = top + (self.height/2)
+        h_centre = left + (self.width/2)
 
     # object variables:
-    top_b = OBJ.y_posn
-    bottom_b = OBJ.y_posn + OBJ.height
-    left_b = OBJ.x_posn
-    right_b = OBJ.x_posn + OBJ.width
-    r = (right_b - left_b)/2
-    v_centre_b = top_b + r
-    h_centre_b = left_b + r
+        top_b = Obj.y_posn
+        bottom_b = Obj.y_posn + OBJ.height
+        left_b = Obj.x_posn
+        right_b = Obj.x_posn + OBJ.width
+        r = (right_b - left_b)/2
+        v_centre_b = top_b + r
+        h_centre_b = left_b + r
 
     
     

@@ -4,12 +4,12 @@ from tkinter import *
 
 class Table:
     #### constructor
-    def __init__(self, window, colour="black", net_colour="white", width=1000, height=1000, vertical_net=False, horizontal_net=False):
+    def __init__(self, window, color="black", net_color="white", width=1000, height=1000, vertical_net=False, horizontal_net=False):
         self.width = width
         self.height = height
-        self.colour = colour
+        self.color = color
 # order a canvas to draw on frm the tkinter factory:
-        self.canvas = Canvas(window, bg=self.colour, height=self.height, width=self.width)
+        self.canvas = Canvas(window, bg=self.color, height=self.height, width=self.width)
         self.canvas.pack()
 
 # add a net to the canvas using a method from the tkinter factory:
@@ -22,8 +22,8 @@ class Table:
 # extra tool for adding a rectangle to the canvas:
     def draw_square(self, square):
         x1 = square.x_posn
-        x2 = rectangle.x_posn + rectangle.width
-        y1 = rectangle.y_posn
-        y2 = rectangle.y_posn + rectangle.height
-        c = rectangle.colour
-        return self.canvas.create_rectangle(x1, y1, x2, y2, fill=c)
+        x2 = square.x_posn + square.width
+        y1 = square.y_posn
+        y2 = square.y_posn + square.height
+        c = square.color
+        return self.canvas.create_square(x1, y1, x2, y2, fill=c)
