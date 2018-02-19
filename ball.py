@@ -64,21 +64,21 @@ class Ball:
         self.y_posn = self.y_start
 
     # ball variables:
-        top = self.y_posn
-        bottom = self.y_posn + self.height
-        left = self.x_posn
-        right = self.x_posn + self.width
-        v_centre = top + (self.height/2)
-        h_centre = left + (self.width/2)
+    top = self.y_posn
+    bottom = self.y_posn + self.height
+    left = self.x_posn
+    right = self.x_posn + self.width
+    v_centre = top + (self.height/2)
+    h_centre = left + (self.width/2)
 
     # object variables:
-        top_b = OBJ.y_posn
-        bottom_b = OBJ.y_posn + OBJ.height
-        left_b = OBJ.x_posn
-        right_b = OBJ.x_posn + OBJ.width
-        r = (right_b - left_b)/2
-        v_centre_b = top_b + r
-        h_centre_b = left_b + r
+    top_b = OBJ.y_posn
+    bottom_b = OBJ.y_posn + OBJ.height
+    left_b = OBJ.x_posn
+    right_b = OBJ.x_posn + OBJ.width
+    r = (right_b - left_b)/2
+    v_centre_b = top_b + r
+    h_centre_b = left_b + r
 
     
     
