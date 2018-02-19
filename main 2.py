@@ -42,4 +42,3 @@ window.bind("<Right>",ball.move_right)
 
 game_flow()
 window.mainloop()
-        
