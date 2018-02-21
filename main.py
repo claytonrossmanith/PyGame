@@ -86,7 +86,7 @@ window.bind("<Down>", bat_R.move_down)
 window.bind("<space>", restart_game)
 
 
-
+uiygyufmnluiyliyilfyfyfylfyhfyhif
 
 # call the game_flow loop
 game_flow()
