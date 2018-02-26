@@ -17,7 +17,10 @@ my_ball = ball.Ball(table = my_table, x_speed = x_velocity, y_speed = y_velocity
 
 bat_L = bat.Bat(table = my_table, width = 250, height = 68, x_posn = 3, y_posn = 150, color = "yellow")
 bat_R = bat.Bat(table = my_table, width = 250, height = 68, x_posn = 750, y_posn = 450, color = "yellow")
-                
+
+self.ballposition=[0,0]
+self.ballposition[0]=self.ballstart[0]
+self.ballposition[0]=self.ballstart[1]
 
 def game_flow():
     global first_serve
@@ -61,7 +64,25 @@ def game_flow():
 
     my_ball.move_next()
     window.after(50, game_flow)
-
+    
+ def move_ball(self, d):
+    x = self.frogposition[0]
+    y = self.frogposition[1]
+  if(d == 'Up'):
+   y -= 1
+  elif(d == 'Down'):
+   y += 1
+  elif(d == 'Left'):
+   x -= 1
+  else:
+   x += 1
+  if(x >= 0 and y >= 0 and x < self.width and y < self.height):
+   self.frogposition[0] = x
+   self.frogposition[1] = y
+   self.movedup = False
+   if(d == 'Up' and y < self.highest):
+    self.movedup = True
+    
 def restart_game(master):
         global score_left
         global score_right
