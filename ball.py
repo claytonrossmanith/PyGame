@@ -1,8 +1,8 @@
 import table, random
 
 class Ball:
-    def __init__(self, table, width = 20, height = 20, color = "yellow",
-                 x_speed = 23, y_speed = 23, x_start = 0, y_start = 0):
+    def __init__(self, table, width = 14, height = 14, color = "red",
+                 x_speed = 6, y_speed = 4, x_start = 0, y_start = 0):
         self.width = width
         self.height = height
         self.x_posn = x_start
@@ -20,46 +20,34 @@ class Ball:
         self.x_posn = self.x_start
         self.y_posn = self.y_start
 
-    def move_up(self, master):
-        self.y_posn = self.y_posn - self.y_speed
-        if(self.y_posn <= 0):
-            self.y_posn = 0
-        x1 = self.x_posn
-        x2 = self.x_posn+self.width
-        y1 = self.y_posn
-        y2 = self.y_posn+self.height
-        self.table.move_item(self.rectangle, x1, y1, x2, y2)
+    def start_ball(self, x_speed, y_speed):
+        self.x_speed = -x_speed if random.randint(0, 1) else x_speed
+        self.y_speed = -y_speed if random.randint(0, 1) else y_speed
+        self.start_position()
 
-    def move_down(self, master):
-        self.y_posn = self.y_posn + self.y_speed
-        far_bottom = self.table.height - self.height
-        if(self.y_posn >= far_bottom):
-            self.y_posn = far_bottom
-        x1 = self.x_posn
-        x2 = self.x_posn+self.width
-        y1 = self.y_posn
-        y2 = self.y_posn+self.height
-        self.table.move_item(self.rectangle, x1, y1, x2, y2)
-
-    def move_left(self, master):
-        self.x_posn = self.x_posn - self.x_speed
-        if(self.x_posn <= 0):
-            self.x_posn = 0
-        x1 = self.x_posn
-        x2 = self.x_posn+self.width
-        y1 = self.y_posn
-        y2 = self.y_posn+self.height
-        self.table.move_rectangle(self.rectangle, x1, y1, x2, y2)
-
-    def move_right(self, master):
+    def move_next(self):
         self.x_posn = self.x_posn + self.x_speed
-        if(self.x_posn >= far_right):
-            self.x_posn = far_right
+        self.y_posn = self.y_posn + self.y_speed
+        if(self.x_posn  <= 3):
+            self.x_posn = 3
+            self.x_speed = -self.x_speed
+        if(self.x_posn >= (self.table.width - (self.width - 3))):
+            self.x_posn = (self.table.width - (self.width - 3))
+            self.x_speed = -self.x_speed
+
+        if(self.y_posn <= 3):
+            self.y_posn = 3
+            self.y_speed = -self.y_speed
+
+        if(self.y_posn >= (self.table.height - (self.height - 3))):
+            self.y_posn = (self.table.height - (self.height - 3))
+            self.y_speed = -self.y_speed
+
         x1 = self.x_posn
         x2 = self.x_posn+self.width
         y1 = self.y_posn
         y2 = self.y_posn+self.height
-        self.table.move_rectangle(self.rectangle, x1, y1, x2, y2)
+        self.table.move_item(self.circle, x1, y1, x2, y2)
 
     def stop_ball(self):
         self.x_speed = 0
