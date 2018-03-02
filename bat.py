@@ -16,6 +16,16 @@ class Bat:
         self.table = table
         self.rectangle = self.table.draw_rectangle(self)
 
+    def move_up(self, master):
+        self.y_posn = self.y_posn - self.y_speed
+        if(self.y_posn <= 0):
+            self.y_posn = 0
+        x1 = self.x_posn
+        x2 = self.x_posn+self.width
+        y1 = self.y_posn
+        y2 = self.y_posn+self.height
+        self.table.move_item(self.rectangle, x1, y1, x2, y2)
+
     def move_down(self, master):
         self.y_posn = self.y_posn + self.y_speed
         far_bottom = self.table.height - self.height
